@@ -23,23 +23,10 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: public.ecr.aws/w8u5e4v2/workshop-frontend:v1
+        image: suzhi11/taskflow-frontend:latest
         imagePullPolicy: Always
         env:
           - name: REACT_APP_BACKEND_URL
-            value: "http://app.sandipdas.in/api/tasks" #$API_ELB_PUBLIC_FQDN #add your API_Load_Balancer DNS manually here if app does not run
+            value: "http://api:8080/api/tasks"
         ports:
         - containerPort: 3000
-        # livenessProbe:
-        #   httpGet:
-        #     path: /
-        #     port: 3000
-        #   initialDelaySeconds: 2
-        #   periodSeconds: 5
-        # readinessProbe:
-        #   httpGet:
-        #      path: /
-        #      port: 3000
-        #   initialDelaySeconds: 5
-        #   periodSeconds: 5
-        #   successThreshold: 1

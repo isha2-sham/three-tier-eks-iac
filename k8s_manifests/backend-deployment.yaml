@@ -23,11 +23,13 @@ spec:
     spec:
       containers:
       - name: api
-        image: public.ecr.aws/w8u5e4v2/workshop-backend:v1
+        image: suzhi11/taskflow-backend:latest
         imagePullPolicy: Always
         env:
+          - name: USE_DB_AUTH
+            value: "true"
           - name: MONGO_CONN_STR
-            value: mongodb://mongodb-svc:27017/todo?directConnection=true
+            value: mongodb://mongodb-svc:27017/todo?directConnection=true&authSource=admin
           - name: MONGO_USERNAME
             valueFrom:
               secretKeyRef:
@@ -48,8 +50,7 @@ spec:
           periodSeconds: 5
         readinessProbe:
           httpGet:
-             path: /ok
-             port: 8080
+            path: /ok
+            port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
-          successThreshold: 1
