@@ -48,8 +48,8 @@ pipeline {
                     $KUBECTL set env deployment/frontend -n $NS REACT_APP_BACKEND_URL=http://$NODE_IP:30001/api/tasks
                     $KUBECTL set image deployment/api api=$BACKEND_IMAGE:$TAG -n $NS
                     $KUBECTL set image deployment/frontend frontend=$FRONTEND_IMAGE:$TAG -n $NS
-                    $KUBECTL rollout status deployment/api -n $NS --timeout=180s
-                    $KUBECTL rollout status deployment/frontend -n $NS --timeout=180s
+                    $KUBECTL rollout status deployment/api -n $NS --timeout=600s
+                    $KUBECTL rollout status deployment/frontend -n $NS --timeout=600s
                 '''
             }
         }
