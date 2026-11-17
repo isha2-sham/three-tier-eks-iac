@@ -50,3 +50,53 @@ body{font-family:'Inter',sans-serif;background:#0f1117;color:#e2e8f0;min-height:
 .delete-btn:hover{background:#2d3148;color:#ef4444}
 .empty{display:flex;flex-direction:column;align-items:center;gap:12px;padding:60px 20px;color:#475569;font-size:15px}
 .empty-icon{font-size:40px}
+
+/* ---- v2 additions: lists, due dates, charts, toolbar ---- */
+.sidebar { overflow-y: auto; gap: 24px; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat-card--red { border-left-color: #ef4444; }
+.stat-number { font-size: 24px; }
+.lists { display: flex; flex-direction: column; gap: 4px; }
+.list-btn { display: flex; align-items: center; gap: 10px; width: 100%; background: transparent; border: none; border-radius: 8px; padding: 8px 10px; color: #94a3b8; font-family: inherit; font-size: 13px; cursor: pointer; text-align: left; }
+.list-btn:hover { background: #22263a; color: #e2e8f0; }
+.list-btn--active { background: #22263a; color: #fff; }
+.list-name { flex: 1; }
+.main { max-width: 1000px; }
+.error-banner { background: #3b1219; border: 1px solid #7f1d1d; color: #fca5a5; padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 16px; }
+.overview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+.card { background: #1a1d27; border: 1px solid #2d3148; border-radius: 12px; padding: 16px; }
+.card-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 600; margin-bottom: 12px; }
+.donut-wrap { display: flex; align-items: center; gap: 14px; }
+.donut { width: 92px; height: 92px; flex-shrink: 0; }
+.donut-bg { fill: none; stroke: #2d3148; stroke-width: 10; }
+.donut-fg { fill: none; stroke: #22c55e; stroke-width: 10; stroke-linecap: round; transition: stroke-dasharray 0.4s ease; }
+.donut-text { fill: #fff; font-size: 18px; font-weight: 700; font-family: inherit; }
+.donut-legend { font-size: 12px; color: #94a3b8; line-height: 1.8; }
+.donut-legend b { color: #fff; }
+.bar-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #94a3b8; margin-bottom: 6px; }
+.bar-label { width: 62px; flex-shrink: 0; }
+.bar-track { flex: 1; height: 6px; background: #2d3148; border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 99px; transition: width 0.4s ease; }
+.bar-count { width: 18px; text-align: right; color: #e2e8f0; }
+.add-form { flex-wrap: wrap; }
+.add-input { min-width: 220px; }
+input[type="date"] { color-scheme: dark; }
+.date-input { background: #1a1d27; border: 1px solid #2d3148; border-radius: 10px; padding: 11px 12px; font-size: 14px; color: #e2e8f0; outline: none; font-family: inherit; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; }
+.toolbar .filters { margin-bottom: 0; }
+.toolbar-right { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.search-input { background: #1a1d27; border: 1px solid #2d3148; border-radius: 8px; padding: 7px 12px; font-size: 13px; color: #e2e8f0; outline: none; font-family: inherit; width: 170px; }
+.search-input:focus { border-color: #818cf8; }
+.small-select { background: #1a1d27; border: 1px solid #2d3148; border-radius: 8px; padding: 7px 10px; font-size: 13px; color: #e2e8f0; outline: none; cursor: pointer; font-family: inherit; }
+.task-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.due { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: #22263a; color: #94a3b8; }
+.due--overdue { background: #ef444420; color: #ef4444; }
+.due--today { background: #f59e0b20; color: #f59e0b; }
+.icon-btn { background: transparent; border: none; color: #475569; cursor: pointer; font-size: 15px; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; flex-shrink: 0; }
+.icon-btn:hover { background: #2d3148; color: #818cf8; }
+.task-card--edit { flex-wrap: wrap; }
+.edit-grid { flex: 1; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: 8px; }
+.edit-grid .add-input { padding: 9px 12px; font-size: 14px; }
+.btn-save { background: #818cf8; color: #fff; border: none; border-radius: 8px; padding: 8px 16px; font-weight: 600; cursor: pointer; font-family: inherit; font-size: 13px; }
+.btn-cancel { background: transparent; border: 1px solid #2d3148; color: #94a3b8; border-radius: 8px; padding: 8px 14px; cursor: pointer; font-family: inherit; font-size: 13px; }
+@media (max-width: 900px) { .overview { grid-template-columns: 1fr; } }
