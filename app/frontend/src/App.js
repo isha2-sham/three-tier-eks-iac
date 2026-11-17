@@ -118,7 +118,7 @@ function App() {
       <main className="main">
         <header className="header">
           <div>
-            <h1 className="page-title">My Tasks (v2)</h1>
+            <h1 className="page-title">My Tasks (v3)</h1>
             <p className="page-sub">
               {new Date().toLocaleDateString("en-US", {
                 weekday: "long", month: "long", day: "numeric",
